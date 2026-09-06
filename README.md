@@ -21,15 +21,18 @@ A browser-based handwritten digit recognition app built with **TensorFlow.js**. 
 | 4 | Dense | 128 | ReLU |
 | 5 | Dense | 10 | Softmax |
 
-## Getting Started
+## 🚀 Getting Started
 
-1. Open `index.html` in **Chrome** or **Firefox** (WebGL required)
-2. Click **Train Model** on first use (~30–60s)
-3. Draw a digit and click **Predict**
+1. ```text
+   git clone https://github.com/Khaq8/digit_recognition_deep_learning.git
+    ```
+2. Open `index.html` in **Chrome** or **Firefox** (WebGL required)
+3. Click **Train Model** on first use (~30–60s)
+4. Draw a digit and click **Predict**
 
 > The model is saved to IndexedDB automatically after training. On subsequent visits it loads instantly — no retraining needed.
 
-## Training
+## 🎯 Training
 
 - **Dataset:** MNIST (60,000 train / 10,000 test), fetched from Google's CDN
 - **Epochs:** 10
@@ -38,36 +41,12 @@ A browser-based handwritten digit recognition app built with **TensorFlow.js**. 
 - **Loss:** Categorical Cross-Entropy
 - **Typical accuracy:** ~97–99%
 
-## Files
+## 📂 Project Structure
+```text
    ├──index.html
    └── style.css
    └── script.js
    └── README.md
+```
 
-No build step, no dependencies to install — just open the file.
-
-## External Resources (CDN)
-
-| Library | Version | Purpose |
-|---------|---------|---------|
-| `@tensorflow/tfjs` | 4.17.0 | Model training & inference |
-
-MNIST data is fetched from:
-https://storage.googleapis.com/learnjs-data/model-builder/mnist_images.png
-https://storage.googleapis.com/learnjs-data/model-builder/mnist_labels_uint8
-
-## Browser Support
-
-| Browser | Status |
-|---------|--------|
-| Chrome | ✅ Recommended |
-| Firefox | ✅ |
-| Edge | ✅ |
-| Brave | ✅ |
-| Safari | ⚠️ May have WebGL issues |
-
-## Notes
-
-- Requires internet connection on first load (CDN + MNIST data)
-- IndexedDB storage is per-origin — clearing browser data removes the model
-- The drawing canvas is 280×280 px, internally scaled to 28×28 for prediction   
+No build step, no dependencies to install — just open the file. 
