@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Digit Recognition - TensorFlow.js</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.17.0/dist/tf.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Handwritten Digit Recognition</h1>
+    <h2>&#x26A0 You might face some lagging issue when training the model, wait until it finish </h2>
+    <div class="container">
+        <!-- LEFT: Drawing -->
+        <div class="panel">
+            <h3>Draw a Digit (28×28)</h3>
+            <canvas id="drawCanvas" width="280" height="280"></canvas>
+            <div class="row">
+                <button class="btn" onclick="clearCanvas()">Clear</button>
+                <button class="btn" onclick="predict()">Predict</button>
+            </div>
+            <div id="result"></div>
+            <div id="confBar"></div>
+            <div class="status" id="modelStatus">No model loaded</div>
+        </div>
+
+        <!-- MIDDLE: Training -->
+        <div class="panel">
+            <h3>Training</h3>
+            <div class="row">
+                <button class="btn train" id="trainBtn" onclick="trainModel()">Train Model</button>
+                <button class="btn" onclick="deleteModel()">Delete Model</button>
+            </div>
+            <div class="status" id="trainStatus">Ready</div>
+            <h3 style="margin-top:12px;">Epoch / Loss / Accuracy</h3>
+            <div id="trainingLog">Waiting to start...</div>
+        </div>
+
+        <div class="panel" id="graphPanel">
+            <h3>Loss & Accuracy</h3>
+            <canvas id="lossCanvas" width="800" height="320" style="width:100%;border-radius:5px;"></canvas>
+            <canvas id="accCanvas" width="800" height="320"
+                style="width:100%;border-radius:5px;margin-top:10px;"></canvas>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
